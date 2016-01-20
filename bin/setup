@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mkdir -p .git/safe
+rm -f .git/safe/bin
+ln -sf ../../bin .git/safe/bin
