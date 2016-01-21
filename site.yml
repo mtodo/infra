@@ -7,3 +7,12 @@
 
   - name: Nginx is started
     service: name=nginx state=started
+
+- hosts: haproxy-servers
+  tasks:
+
+  - name: Haproxy is installed
+    apt: name=haproxy state=present update_cache=true
+
+  - name: Haproxy is started
+    service: name=haproxy state=started

@@ -22,10 +22,15 @@ provisioner:
     ruby_bindir: "/usr/bin"
 
   playbook: site.yml
-  hosts: nginx-servers
 
 platforms:
   - name: ubuntu-14.04
 
 suites:
-  - name: default
+  - name: nginx
+    provisioner:
+      hosts: nginx-servers
+
+  - name: haproxy
+    provisioner:
+      hosts: haproxy-servers
